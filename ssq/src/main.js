@@ -29,10 +29,7 @@ function getHTML(url, callback) {
 }
 
 function writeFile(filename, data) {
-    fs.writeFile(filename, data, {flag: "a+"}, err => {
-            throw err
-        }
-    )
+    fs.writeFile(filename, data, {flag: "a+"}, err => err && console.log(err))
 }
 
 function handle(html) {
